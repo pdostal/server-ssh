@@ -1,4 +1,4 @@
-AllowUsers pavel
+AllowUsers {{ sshd_users }}
 Port 22
 Port 63022
 ListenAddress ::
