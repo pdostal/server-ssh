@@ -1,0 +1,4 @@
+- name: ssh
+  hosts: all
+  sudo: true
+  tasks:
