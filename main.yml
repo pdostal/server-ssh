@@ -1,4 +1,15 @@
 - name: ssh
   hosts: all
   sudo: true
+  handlers:
+  - name: restart sshd
+    service: name=sshd state=restarted
+
   tasks:
+  - name: enable sshd service
+    when: ansible_distribution == 'FreeBSD'
+    lineinfile: dest=/etc/rc.conf regexp=^sshd_enable= line=sshd_enable=YES
+
+  - name: Paste sshd config
+    template: src=templates/sshd_config dest=/etc/ssh/sshd_config
+    notify: restart sshd
