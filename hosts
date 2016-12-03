@@ -1,3 +1,4 @@
+habanero  sshd_users="pavel"
 cucumber  sshd_users="pavel"
 coconut  sshd_users="pavel"
 sorrel  sshd_users="pavel andre www"
